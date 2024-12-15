@@ -1,0 +1,94 @@
+<html>
+<head><title> welcome </title>
+<script>
+var data="";
+var data1="";
+var data2="";
+var data3="";
+var data4="";
+var data5="";
+var data6="";
+var data7="";
+function login()
+{
+
+if (typeof(Storage) !== "undefined") 
+{
+data = JSON.parse(sessionStorage.getItem('cartlist'));
+data1= JSON.parse(sessionStorage.getItem('cartlist1'));
+data2= JSON.parse(sessionStorage.getItem('cartlist2'));
+data3= JSON.parse(sessionStorage.getItem('cartlist3'));
+data4= JSON.parse(sessionStorage.getItem('cartlist4'));
+data5= JSON.parse(sessionStorage.getItem('cartlist5'));
+data6= JSON.parse(sessionStorage.getItem('cartlist6'));
+data7= JSON.parse(sessionStorage.getItem('cartlist7'));
+data8= JSON.parse(sessionStorage.getItem('cartlist8'));
+data9= JSON.parse(sessionStorage.getItem('cartlist9'));
+finaldata=data+data1+data2+data3+data4+data5+data6+data7+data8+data9;
+document.getElementById("d1").innerHTML=finaldata;
+alert(finaldata);
+}
+}
+
+
+function login_disp()
+{
+<!--document.getElementById("d1").innerHTML="welcome";-->
+if (typeof(Storage) !== "undefined") {
+
+document.getElementById("d1").innerHTML = "welcome "+ localStorage.getItem("username");	
+}
+else
+{
+document.getElementById("d1").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+
+}
+function handleselect(elm)
+  {
+  window.location.href = elm.value+".html";
+	 
+  }
+
+<!-- var uname=localStorage.getItem("username");
+/*document.getElementById("d1").innerHTML="Welcome "+ uname; */
+
+</script>
+
+</head>
+<body onload="login_disp()">
+<table cellspacing="30px">
+<div id="d1">
+<tr><td><a href="login.html"> Login</a></td></tr></div>
+<tr>
+
+<td>
+<!--<form name="frm1" action="" method="post"> -->
+<div>Flowers Type</div>
+<br><a href="testfun.html"target="f3">Roses</a></br>
+<br><a href="testfun5.html" target="f3">Lilly</a></br>
+<br><a href="testfun1.html"target="f3">Lotus</a></br>
+<br><a href="testfun2.html"target="f3">Tulip</a></br>
+
+
+</td>
+
+<td>
+Select Plants
+<br><a href="testfun3.html"target="f3">Mango</a></br>
+<br><a href="testfun4.html" target="f3">Xmas</a></br>
+<br><a href="testfun6.html"target="f3">Coconut</a></br>
+<br><a href="testfun2.html"target="f3">Tulip</a></br>
+</td>	`	
+<td>
+Select Flower Arrangement
+<br><a href="testfun7.html"target="f3">Bouquets</a></br>
+<br><a href="testfun8.html" target="f3">Box</a></br>
+<br><a href="testfun9.html"target="f3">Vase</a></br>
+
+</td>
+</tr>
+<tr><td><input type="button" name="cart" value="previous selected " onClick="login()"></td></tr>
+</table>
+</body>
+</html>

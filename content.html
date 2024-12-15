@@ -1,0 +1,43 @@
+<html>
+<head>
+<script>
+var banner_array=new Array('banner5.jpg','banner6.jpg','banner7.jpg','banner8.jpg');
+var link_arr=new Array('http://www.google.com','http://www.facebook.com','http://www.amazon.com','http://www.instagram.com')
+var banner=0;
+function DisplayBanners()
+{
+if(banner==banner_array.length)
+{
+banner=0;
+}
+document.ChangeBanner.src=banner_array[banner];
+setTimeout("DisplayBanners()",3000);
+banner++;
+}
+function linkbanner()
+{
+document.location.href=link_arr[banner];
+}
+</script>
+</head>
+<body onload="DisplayBanners()">
+<center>
+<font color="green"><h3> <marquee>Make your day begin with freashness</marquee></h3></font>
+<a href="Javascript:linkbanner()">
+<img src="banner5.jpg" width="600" height="100%" name="ChangeBanner"/>
+</a>
+</center>
+
+
+
+
+
+<!--<img src="rose1.jpg" height=200 width=200>
+<img src="rose2.jpg" height=200 width=200>
+<img src="rose4.jpg" height=200 width=200>
+<img src="lotus1.jpg" height=200 width=200>
+<img src="lotus2.jpg" height=200 width=200>
+<img src="rose4.jpg" height=200 width=200>
+-->
+</body>
+

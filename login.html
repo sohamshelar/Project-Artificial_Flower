@@ -1,0 +1,46 @@
+<!DOCTYPE html>    
+ <html>   
+  <head>      
+   <title>Login Form</title>
+    
+<script>
+function login()
+{
+var user_name;	
+with(document.forms.loginfrm)	
+{
+	 user_name=Uname.value
+document.getElementById("myform").innerHTML="Login successful "+user_name;
+if (typeof(Storage) !== "undefined") {
+localStorage.setItem("username",user_name);
+document.getElementById("myform").innerHTML = localStorage.getItem("username");	
+}
+else
+{
+document.getElementById("myform").innerHTML = "Sorry, your browser does not support Web Storage...";
+}
+}
+}
+function home_fun()
+{
+	 
+	location.href = "options.html";
+	
+ }
+</script>
+  </head> 
+  <body>
+<b>  <button id="myButton" class="float-left submit-button" onClick="home_fun()" >Menu</button></b>
+   <div id="myform">
+      <h2> Login Page</h2><br>
+       <form name="loginfrm" method="post" action="login.php">         
+	   <label> <b>User Name</b></label>
+        <input type="text" name="Uname" id="Uname" ><br>
+        <b>Contact Number<b><input type="text" name="contact"> 
+       <br><br> <b> Address&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</b><input type="text" name="address">
+        <br><br><label><b>Password  </b> </label> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;     
+     <input type="Password" name="Pass" id="Pass" ><br><br>       
+    <input type="button" name="log" id="log" value="submit" onclick="login()"> <br><br>    
+	</div>
+    </body>
+	</html>
